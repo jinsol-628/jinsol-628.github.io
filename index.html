@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kim Jinsol 3D 애니메이터 포트폴리오</title>
+    <title>김진솔 3D 애니메이터 포트폴리오</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+     <link rel="icon" href="./img/jinsol.ico" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
@@ -24,8 +25,11 @@
             background-color: #4a4a4a;
             border-radius: 4px;
         }
+       
         .portfolio-container {
-            gap: 27px;
+            width: 75%;
+            margin: 0 auto;
+            gap: 26.6px;
         }
         .project-thumbnail {
             position: relative;
@@ -39,9 +43,14 @@
             height: 0;
         }
         @media (max-width: 768px){
+            .portfolio-container {
+                width: 100%;
+                gap: 14px;
+            }
             .project-thumbnail {
-            width: calc(50% - 16px);
-            padding-bottom: calc(calc(50% - 16px) * 9 / 16);
+            width: calc(50% - 7px);
+            padding-bottom: calc(calc(50% - 7px) * 9 / 16);
+            border-radius: 8px;
             height: 0;
         }
         }
@@ -179,7 +188,7 @@
 
     <!-- 프로젝트 섹션 (썸네일 리스트) -->
     <section id="projects" class="py-16 md:py-24 px-8">
-        <div class="container mx-auto">
+        <div class="mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Projects</h2>
             <div class="flex flex-wrap portfolio-container">
                 <!-- 프로젝트 썸네일 시작 -->
