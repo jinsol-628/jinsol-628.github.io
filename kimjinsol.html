@@ -24,6 +24,9 @@
             background-color: #4a4a4a;
             border-radius: 4px;
         }
+        .portfolio-container {
+            gap: 27px;
+        }
         .project-thumbnail {
             position: relative;
             cursor: pointer;
@@ -31,10 +34,20 @@
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
             /* 16:9 비율 유지, 2/3 크기로 조정 */
-            width: 66.66%;
-            padding-bottom: calc(66.66% * 9 / 16);
+            width: calc(33% - 16px);
+            padding-bottom: calc(calc(33% - 16px) * 9 / 16);
             height: 0;
-            margin: 0 auto;
+        }
+        @media (max-width: 768px){
+            .project-thumbnail {
+            width: calc(50% - 16px);
+            padding-bottom: calc(calc(50% - 16px) * 9 / 16);
+            height: 0;
+        }
+        }
+        .project-description-container {
+            display: flex;
+            justify-content: center;
         }
         .project-thumbnail img {
             position: absolute;
@@ -168,7 +181,7 @@
     <section id="projects" class="py-16 md:py-24 px-8">
         <div class="container mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Projects</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="flex flex-wrap portfolio-container">
                 <!-- 프로젝트 썸네일 시작 -->
                 <a href="#project-콩순이" class="project-thumbnail group" data-project-id="콩순이">
                     <img src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP0500/ko/20250402/1035/P001769520.jpg/dims/resize/1280" alt="Project 콩순이" class="w-full h-full object-cover">
