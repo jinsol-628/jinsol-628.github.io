@@ -70,6 +70,29 @@
         .hidden {
             display: none;
         }
+        /* 영상 컨테이너 크기 및 비율 조정 */
+        .video-container {
+            width: 66.66%; /* 2/3 크기 */
+            margin: 0 auto;
+            position: relative;
+            padding-bottom: calc(66.66% * 9 / 16); /* 2/3 크기에 대한 16:9 비율 유지 */
+            height: 0;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        /* 프로젝트 설명 부분 가운데 정렬 */
+        .project-description-container {
+            text-align: center;
+        }
+        .project-description-container p {
+            display: inline-block;
+            text-align: left;
+        }
     </style>
 </head>
 <body>
@@ -98,7 +121,7 @@
             </p>
             
             <!-- 포트폴리오 릴 영상: https://youtu.be/yhE2S52QEKI -->
-            <div class="relative pt-[56.25%] overflow-hidden rounded-xl shadow-lg">
+            <div class="relative overflow-hidden rounded-xl shadow-lg video-container">
                 <iframe class="absolute top-0 left-0 w-full h-full"
                     src="https://www.youtube.com/embed/yhE2S52QEKI"
                     title="김진솔 3D 애니메이터 포트폴리오 메인 릴"
@@ -117,35 +140,35 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- 프로젝트 썸네일 시작 -->
                 <a href="#project-콩순이" class="project-thumbnail group" data-project-id="콩순이">
-                    <img src="http://googleusercontent.com/file_content/1" alt="Project 콩순이" class="w-full h-full object-cover rounded-xl">
+                    <img src="your-kongsun-image-file-name.jpg" alt="Project 콩순이" class="w-full h-full object-cover rounded-xl">
                     <div class="thumbnail-text">Project 콩순이</div>
                 </a>
                 <a href="#project-티니핑" class="project-thumbnail group" data-project-id="티니핑">
-                    <img src="uploaded:SMiYsUsPjbAtzwdsMWFm-7vcmcYtXH6iSGsCS4MOrITZDxPBDqlKtaF9adQL8pv-CLG_rkXpjU4ZPP0J-A11og.webp-0ddeb96e-f297-4ed2-9432-715170f1d1b2" alt="Project 티니핑" class="w-full h-full object-cover rounded-xl">
+                    <img src="https://i.namu.wiki/i/SMiYsUsPjbAtzwdsMWFm-7vcmcYtXH6iSGsCS4MOrITZDxPBDqlKtaF9adQL8pv-CLG_rkXpjU4ZPP0J-A11og.webp" alt="Project 티니핑" class="w-full h-full object-cover rounded-xl">
                     <div class="thumbnail-text">Project 티니핑</div>
                 </a>
                 <a href="#project-카비온" class="project-thumbnail group" data-project-id="카비온">
-                    <img src="uploaded:1693195735096_460724.jpg-5c86b349-fcae-47d7-969c-b50bcbb61538" alt="Project 카비온" class="w-full h-full object-cover rounded-xl">
+                    <img src="your-kavion-image-file-name.jpg" alt="Project 카비온" class="w-full h-full object-cover rounded-xl">
                     <div class="thumbnail-text">Project 카비온</div>
                 </a>
                 <a href="#project-스위트홈2" class="project-thumbnail group" data-project-id="스위트홈2">
-                    <img src="uploaded:5ZWY5ZW6IOLWZZUNGWE7ZF6EWI.jpg-d2d05bf7-0d71-44ec-853b-7fa60b599f42" alt="Project 스위트홈 시즌2" class="w-full h-full object-cover rounded-xl">
+                    <img src="your-sweethome-image-file-name.jpg" alt="Project 스위트홈 시즌2" class="w-full h-full object-cover rounded-xl">
                     <div class="thumbnail-text">Project 스위트홈 시즌2</div>
                 </a>
                 <a href="#project-엄마까투리" class="project-thumbnail group" data-project-id="엄마까투리">
-                    <img src="uploaded:p1065602557661432_863_thum.jpg-2efe2f60-b182-436f-9ad7-339c144d5668" alt="Project 엄마까투리 시즌5" class="w-full h-full object-cover rounded-xl">
+                    <img src="your-mom-kkaturi-image-file-name.jpg" alt="Project 엄마까투리 시즌5" class="w-full h-full object-cover rounded-xl">
                     <div class="thumbnail-text">Project 엄마까투리 시즌5</div>
                 </a>
                 <a href="#project-슈퍼윙스8" class="project-thumbnail group" data-project-id="슈퍼윙스8">
-                    <img src="uploaded:maxresdefault.jpg-77a1e5dc-0ccb-4956-94b2-1e7441c344b0" alt="Project 슈퍼윙스 시즌8" class="w-full h-full object-cover rounded-xl">
+                    <img src="your-superwings-image-file-name.jpg" alt="Project 슈퍼윙스 시즌8" class="w-full h-full object-cover rounded-xl">
                     <div class="thumbnail-text">Project 슈퍼윙스 시즌8</div>
                 </a>
                 <a href="#project-방과후전쟁활동" class="project-thumbnail group" data-project-id="방과후전쟁활동">
-                    <img src="uploaded:09f7d299-99e8-4305-be8c-cf47230e31e2.jpg-d0e70514-8d97-42cc-9f92-9b72f8402da8" alt="Project 방과후 전쟁활동" class="w-full h-full object-cover rounded-xl">
+                    <img src="your-after-school-war-image-file-name.jpg" alt="Project 방과후 전쟁활동" class="w-full h-full object-cover rounded-xl">
                     <div class="thumbnail-text">Project 방과후 전쟁활동</div>
                 </a>
                 <a href="#project-카트라이더" class="project-thumbnail group" data-project-id="카트라이더">
-                    <img src="uploaded:maxresdefault (1).jpg-ac694b4d-1d18-4e1d-b079-efa57c1bf899" alt="Project 카트라이더 MV" class="w-full h-full object-cover rounded-xl">
+                    <img src="your-kartrider-image-file-name.jpg" alt="Project 카트라이더 MV" class="w-full h-full object-cover rounded-xl">
                     <div class="thumbnail-text">Project 카트라이더 MV</div>
                 </a>
                 <!-- 프로젝트 썸네일 끝 -->
