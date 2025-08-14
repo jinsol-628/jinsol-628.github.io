@@ -30,9 +30,11 @@
             overflow: hidden;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-            /* 16:9 비율 유지 */
-            padding-bottom: 56.25%; /* 9/16 */
+            /* 16:9 비율 유지, 2/3 크기로 조정 */
+            width: 66.66%;
+            padding-bottom: calc(66.66% * 9 / 16);
             height: 0;
+            margin: 0 auto;
         }
         .project-thumbnail img {
             position: absolute;
@@ -97,10 +99,10 @@
             height: 100%;
         }
         .main-video-container {
-            width: 100%; /* 메인 릴 영상 크기 */
+            width: 80%; /* 4/5 크기 */
             margin: 0 auto;
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 비율 유지 */
+            padding-bottom: 45%; /* 4/5 크기에 대한 16:9 비율 유지 (4/5 * 9/16) */
             height: 0;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
@@ -440,7 +442,7 @@
 
             const htmlContent = `
                 <h3 class="text-3xl font-bold mb-8 text-center">${project.title}</h3>
-                <div class="relative pt-[56.25%] overflow-hidden rounded-xl shadow-lg">
+                <div class="relative overflow-hidden rounded-xl shadow-lg video-container">
                     <iframe class="absolute top-0 left-0 w-full h-full"
                         src="${project.videoUrl}"
                         title="${project.title} 프로젝트 영상"
