@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kim Jinsol 3D 애니메이터 포트폴리오</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a1a;
+            color: #f5f5f5;
+        }
+        /* 스크롤바 커스터마이징 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #2a2a2a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #4a4a4a;
+            border-radius: 4px;
+        }
+        .project-thumbnail {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        .project-thumbnail::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .project-thumbnail:hover::before {
+            opacity: 1;
+        }
+        .project-thumbnail img {
+            transition: transform 0.3s;
+        }
+        .project-thumbnail:hover img {
+            transform: scale(1.05);
+        }
+        .thumbnail-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+            opacity: 0;
+            transition: opacity 0.3s;
+            text-align: center;
+        }
+        .project-thumbnail:hover .thumbnail-text {
+            opacity: 1;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 상단 내비게이션 바 -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#1a1a1a] bg-opacity-80 backdrop-blur-md">
+        <div class="container mx-auto flex justify-between items-center py-4 px-8">
+            <a href="#home" class="text-2xl font-bold text-teal-400">Kim Jinsol</a>
+            <div class="space-x-8 text-lg font-medium hidden md:flex">
+                <a href="#home" class="hover:text-teal-400 transition">Home</a>
+                <a href="#projects" class="hover:text-teal-400 transition">Projects</a>
+                <a href="#about" class="hover:text-teal-400 transition">About</a>
+                <a href="#contact" class="hover:text-teal-400 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <div class="h-16"></div> <!-- 내비게이션 바 높이만큼 공간 확보 -->
+
+
+    <!-- 메인 섹션 (하이라이트 릴) -->
+    <section id="home" class="py-16 md:py-24 px-8">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-pulse">3D Animator Portfolio</h1>
+            <p class="text-lg md:text-xl text-gray-400 mb-8">
+                캐릭터에 진심을 담는 애니메이터 김진솔입니다.
+            </p>
+            
+            <!-- 포트폴리오 릴 영상: https://youtu.be/yhE2S52QEKI -->
+            <div class="relative pt-[56.25%] overflow-hidden rounded-xl shadow-lg">
+                <iframe class="absolute top-0 left-0 w-full h-full"
+                    src="https://www.youtube.com/embed/yhE2S52QEKI"
+                    title="김진솔 3D 애니메이터 포트폴리오 메인 릴"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- 프로젝트 섹션 (썸네일 리스트) -->
+    <section id="projects" class="py-16 md:py-24 px-8">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Projects</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 프로젝트 썸네일 시작 -->
+                <a href="#project-콩순이" class="project-thumbnail group" data-project-id="콩순이">
+                    <img src="http://googleusercontent.com/file_content/1" alt="Project 콩순이" class="w-full h-full object-cover rounded-xl">
+                    <div class="thumbnail-text">Project 콩순이</div>
+                </a>
+                <a href="#project-티니핑" class="project-thumbnail group" data-project-id="티니핑">
+                    <img src="uploaded:SMiYsUsPjbAtzwdsMWFm-7vcmcYtXH6iSGsCS4MOrITZDxPBDqlKtaF9adQL8pv-CLG_rkXpjU4ZPP0J-A11og.webp-0ddeb96e-f297-4ed2-9432-715170f1d1b2" alt="Project 티니핑" class="w-full h-full object-cover rounded-xl">
+                    <div class="thumbnail-text">Project 티니핑</div>
+                </a>
+                <a href="#project-카비온" class="project-thumbnail group" data-project-id="카비온">
+                    <img src="uploaded:1693195735096_460724.jpg-5c86b349-fcae-47d7-969c-b50bcbb61538" alt="Project 카비온" class="w-full h-full object-cover rounded-xl">
+                    <div class="thumbnail-text">Project 카비온</div>
+                </a>
+                <a href="#project-스위트홈2" class="project-thumbnail group" data-project-id="스위트홈2">
+                    <img src="uploaded:5ZWY5ZW6IOLWZZUNGWE7ZF6EWI.jpg-d2d05bf7-0d71-44ec-853b-7fa60b599f42" alt="Project 스위트홈 시즌2" class="w-full h-full object-cover rounded-xl">
+                    <div class="thumbnail-text">Project 스위트홈 시즌2</div>
+                </a>
+                <a href="#project-엄마까투리" class="project-thumbnail group" data-project-id="엄마까투리">
+                    <img src="uploaded:p1065602557661432_863_thum.jpg-2efe2f60-b182-436f-9ad7-339c144d5668" alt="Project 엄마까투리 시즌5" class="w-full h-full object-cover rounded-xl">
+                    <div class="thumbnail-text">Project 엄마까투리 시즌5</div>
+                </a>
+                <a href="#project-슈퍼윙스8" class="project-thumbnail group" data-project-id="슈퍼윙스8">
+                    <img src="uploaded:maxresdefault.jpg-77a1e5dc-0ccb-4956-94b2-1e7441c344b0" alt="Project 슈퍼윙스 시즌8" class="w-full h-full object-cover rounded-xl">
+                    <div class="thumbnail-text">Project 슈퍼윙스 시즌8</div>
+                </a>
+                <a href="#project-방과후전쟁활동" class="project-thumbnail group" data-project-id="방과후전쟁활동">
+                    <img src="uploaded:09f7d299-99e8-4305-be8c-cf47230e31e2.jpg-d0e70514-8d97-42cc-9f92-9b72f8402da8" alt="Project 방과후 전쟁활동" class="w-full h-full object-cover rounded-xl">
+                    <div class="thumbnail-text">Project 방과후 전쟁활동</div>
+                </a>
+                <a href="#project-카트라이더" class="project-thumbnail group" data-project-id="카트라이더">
+                    <img src="uploaded:maxresdefault (1).jpg-ac694b4d-1d18-4e1d-b079-efa57c1bf899" alt="Project 카트라이더 MV" class="w-full h-full object-cover rounded-xl">
+                    <div class="thumbnail-text">Project 카트라이더 MV</div>
+                </a>
+                <!-- 프로젝트 썸네일 끝 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 개별 프로젝트 상세 페이지가 표시될 컨테이너 -->
+    <section id="project-details" class="py-16 md:py-24 hidden px-8">
+        <div id="project-details-container" class="container mx-auto">
+            <!-- 자바스크립트에 의해 내용이 동적으로 삽입될 공간 -->
+        </div>
+    </section>
+
+    <!-- 자기소개 섹션 -->
+    <section id="about" class="py-16 md:py-24 px-8">
+        <div class="container mx-auto max-w-3xl text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">About Me</h2>
+            <div class="space-y-6 text-lg text-gray-300 text-left">
+                <!-- 사용자 제공 정보 -->
+                <div class="mb-8 p-6 bg-[#2a2a2a] rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-teal-400 mb-4">Profile</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-base">
+                        <p><strong>생년월일:</strong> 1998.06.28</p>
+                        <p><strong>학력:</strong> 동아방송예술대학교 디지털영상디자인과 졸업</p>
+                    </div>
+                </div>
+                
+                <div class="mb-8 p-6 bg-[#2a2a2a] rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-teal-400 mb-4">경력</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>
+                            <strong>아이콘픽쳐스 - 3D 애니메이터</strong> (2024.10 ~ 2025.04)
+                            <ul class="list-none space-y-1 ml-4 text-gray-400">
+                                <li>TV 애니메이션 3D 애니메이팅</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>에이브스튜디오 - PD</strong> (2024.05 ~ 2024.10)
+                            <ul class="list-none space-y-1 ml-4 text-gray-400">
+                                <li>프로젝트 스케줄 관리, bg/ch/pr 어셋 관리</li>
+                                <li>룩뎁/스킬 레퍼런스보드 작성, 완구 패키지 이미지 제작</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>에스와이미디어 - 3D 애니메이터</strong> (2021.05 ~ 2023.06)
+                            <ul class="list-none space-y-1 ml-4 text-gray-400">
+                                <li>드라마 3D 애니메이팅, TV 애니메이션 3D 애니메이팅</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="p-6 bg-[#2a2a2a] rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-teal-400 mb-4">역량 및 기술</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4">
+                        <div>
+                            <p class="font-bold text-gray-200">역량</p>
+                            <ul class="list-disc list-inside space-y-1 mt-2 text-gray-400">
+                                <li>스케줄 관리</li>
+                                <li>커뮤니케이션</li>
+                                <li>협동심</li>
+                                <li>문제 해결</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-200">기술</p>
+                            <ul class="list-disc list-inside space-y-1 mt-2 text-gray-400">
+                                <li>MAYA</li>
+                                <li>Illustrator</li>
+                                <li>Premiere</li>
+                                <li>PhotoShop</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 사용자 제공 자기소개서 내용 -->
+                <div id="about-text" class="pt-8 border-t border-gray-700 space-y-6 hidden">
+                    <p>
+                        <strong>성장을 추구하는 애니메이터</strong><br>
+                        저는 사람들에게 긍정적인 영향을 주는 콘텐츠를 만들고 싶다는 열정으로 애니메이션 제작의 길을 걷게 되었습니다. 아이들의 웃음을 책임지는 티니핑 시즌 5와 콩순이 같은 TV 애니메이션부터, 긴장감 넘치는 방과후 전쟁활동과 같은 드라마 프로젝트까지 다양한 프로젝트에 참여하며 성장해왔습니다. 특히 티니핑 작업 시에는 피드백을 통해 기존의 정형화된 동작에서 벗어나 캐릭터의 개성을 살린 과장된 표현을 익히는 등, 늘 적극적인 피드백 수용을 통한 배우고 발전하려는 태도를 유지해왔습니다. 앞으로도 이 열정과 도전 정신으로 사람들에게 깊은 공감과 감동을 전달하는 애니메이션을 만들고 싶습니다.
+                    </p>
+                    <p>
+                        <strong>책임감과 협력을 통해 성과를 만드는 애니메이터</strong><br>
+                        문제 상황이 발생했을 때 동료와 협력하여 해결하는 것의 가치를 깊이 깨닫고 실천하고 있습니다. 드라마 방과후 전쟁활동 프로젝트 당시, 작업이 상당 부분 진행된 후 소형구 움직임에 대한 전체적인 방향성을 수정하라는 피드백을 받았습니다. 초기 단계부터 체계적이고 깔끔하게 관리한 키프레임 덕분에 신속하게 수정 작업을 완료할 수 있었으며, 스튜디오 라이브러리를 적극 활용하여 떼씬 작업을 효율적으로 처리하며 작업 속도를 높였습니다.
+                        이러한 경험을 통해 개인의 역량뿐만 아니라 팀워크의 중요성을 실감했습니다. 팀원들의 퇴사와 입사로 업무량이 불안정했던 시기에도, 연장 근무를 자처하며 맡은 바를 책임감 있게 완수했습니다. 또한 제 작업이 일찍 끝났을 때는 먼저 다른 팀원의 작업을 도왔고, 제 작업에 대한 피드백이 늦어질 때는 도움을 받으며 서로의 공백을 메워주는 협력을 통해 전체 프로젝트의 효율성을 높였습니다. 저는 이처럼 책임감과 협력의 태도를 가장 중요한 가치로 여기며, 팀의 목표 달성에 기여하는 애니메이터입니다.
+                    </p>
+                    <p>
+                        <strong>캐릭터에 진심을 담는 애니메이터</strong><br>
+                        저는 다양한 애니메이션 프로젝트를 경험하며, 제작자의 즐거움과 진심이 결과물에 큰 영향을 미친다는 것을 깨달았습니다.
+                        특히 콩순이의 마지막화 댄스 장면을 작업했을 때가 가장 기억에 남습니다. 마지막회를 장식하는 중요한 장면이었기에 부담감도 있었지만, 한편으로는 정든 친구와 헤어지는 듯한 애틋함과 함께 콩순이를 세상에서 가장 귀엽고 사랑스러운 친구로 표현하고 싶다는 마음이 컸습니다. 콩순이가 실제 살아있는 캐릭터처럼 느껴지도록 통통 튀는 움직임과 귀여운 표정을 담아내려 노력했습니다. 제가 작업하며 느꼈던 즐거움과 애정이 시청자들에게도 전해져, 콩순이의 사랑스러움에 공감하고 미소 지을 수 있기를 바라며 최선을 다했습니다. 이처럼 제가 의도한 감정이 시청자에게 전달되었을 때 가장 큰 보람을 느끼며, 이러한 경험들이 저를 계속 이 길로 나아가게 하는 원동력입니다.
+                        TV 애니메이션, 드라마 등 다양한 장르의 프로젝트를 작업하며, 각기 다른 환경 속에서도 흔들리지 않는 열정으로 결과물을 완성해 왔습니다. 앞으로도 새로운 프로젝트에 주저하지 않고 도전하며, 늘 성장을 추구하는 애니메이터로 나아가겠습니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 연락처 섹션 -->
+    <section id="contact" class="py-16 md:py-24 px-8">
+        <div class="container mx-auto text-center max-w-md">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">Contact</h2>
+            <div class="flex justify-center items-center space-x-6 text-2xl">
+                <a href="mailto:kjsev789@naver.com" class="text-gray-400 hover:text-teal-400 transition">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a href="tel:010-2449-6910" class="text-gray-400 hover:text-teal-400 transition">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+            </div>
+            <p class="mt-4 text-lg text-gray-400">kjsev789@naver.com</p>
+            <p class="mt-1 text-lg text-gray-400">010-2449-6910</p>
+        </div>
+    </section>
+
+    <footer class="text-center text-gray-500 mt-16 py-4 border-t border-gray-700">
+        &copy; 2025 김진솔. All Rights Reserved.
+    </footer>
+
+    <script>
+        // 프로젝트 정보를 담고 있는 객체
+        const projects = {
+            '콩순이': {
+                title: 'Project 콩순이 (2025)',
+                videoUrl: 'https://www.youtube.com/embed/I9wKG8GhcEE',
+                description: `
+                    <p class="text-sm space-y-2">
+                        <a href="https://youtu.be/4pjvCyaVYEo?feature=shared" target="_blank" class="text-gray-200 hover:text-teal-400 transition"><i class="fas fa-play-circle text-teal-400 mr-2"></i><strong>48화 ‘모기야 그만해’ 애니메이션 작업 (59초)</strong></a>
+                        <br><span class="ml-6">(00:00~00:59)</span><br>
+                        <a href="https://youtu.be/Bcrx6_Vr5Z4?feature=shared" target="_blank" class="text-gray-200 hover:text-teal-400 transition"><i class="fas fa-play-circle text-teal-400 mr-2"></i><strong>50화 ‘뭉치만 믿어’ 애니메이션 작업 (1분 20초)</strong></a>
+                        <br><span class="ml-6">(00:00~01:20)</span><br>
+                        <a href="https://youtu.be/JsFyBN6X_Ew?feature=shared&t=47" target="_blank" class="text-gray-200 hover:text-teal-400 transition"><i class="fas fa-play-circle text-teal-400 mr-2"></i><strong>52화 ‘콩순이의 생일파티’ 애니메이션 작업 (56초)</strong></a>
+                        <br><span class="ml-6">(00:47~01:17, 05:14~05:40)</span>
+                    </p>
+                `
+            },
+            '티니핑': {
+                title: 'Project 슈팅스타 캐치! 티니핑 (2024)',
+                videoUrl: 'https://www.youtube.com/embed/rbbrdd973bs',
+                description: `
+                    <p class="text-sm space-y-2">
+                        <a href="https://www.youtube.com/watch?v=Qv1i-l_APuU" target="_blank" class="text-gray-200 hover:text-teal-400 transition"><i class="fas fa-play-circle text-teal-400 mr-2"></i><strong>14화 ‘하트로즈에 온 노아’ 애니메이션 작업 (1분 58초)</strong></a>
+                        <br><a href="https://youtu.be/nMAFQGZvSzY?feature=shared&t=13" target="_blank" class="text-gray-200 hover:text-teal-400 transition"><i class="fas fa-play-circle text-teal-400 mr-2"></i><strong>18화 ‘루루핑과 노래해요’ 애니메이션 작업 (2분 13초)</strong></a>
+                        <br><a href="https://youtu.be/_wBKAocQ3Fo?feature=shared&t=111" target="_blank" class="text-gray-200 hover:text-teal-400 transition"><i class="fas fa-play-circle text-teal-400 mr-2"></i><strong>22화 ‘뽀뽀핑 따라 삼만리’ 애니메이션 작업 (2분)</strong></a>
+                    </p>
+                `
+            },
+            '카비온': {
+                title: 'Project 카비온 (2023)',
+                videoUrl: 'https://www.youtube.com/embed/I5WaXbvtJmc',
+                description: `
+                    <p class="text-sm space-y-2">
+                        <a href="https://www.youtube.com/watch?feature=shared&v=CYluk3fgL4Y" target="_blank" class="text-gray-200 hover:text-teal-400 transition"><i class="fas fa-play-circle text-teal-400 mr-2"></i><strong>5화 ‘투란타의 분노’  애니메이션 작업 (2분 56초)</strong></a>
+                        <br><span class="ml-6">(04:26 ~ 05:24, 05:38 ~ 05:59, 07:16 ~ 08:33, 10:48 ~11:12)</span><br>
+                        <a href="https://www.youtube.com/watch?feature=shared&v=2PLziHg8vWI" target="_blank" class="text-gray-200 hover:text-teal-400 transition"><i class="fas fa-play-circle text-teal-400 mr-2"></i><strong>11화 ‘토잉토리는 귀여워’ 애니메이션 작업 (1분8초)</strong></a>
+                        <br><span class="ml-6">(00:54~01:07, 03:48~04:17, 05:56~06:18)</span>
+                    </p>
+                `
+            },
+            '스위트홈2': {
+                title: 'Project 스위트홈 시즌 2 (2022-2023)',
+                videoUrl: 'https://www.youtube.com/embed/pcMAl_dBN0A',
+                description: `
+                    <p class="text-sm space-y-2">
+                        <a href="https://www.youtube.com/watch?v=2QsGIzyiuJc&t=102s" target="_blank" class="text-gray-200 hover:text-teal-400 transition"><i class="fas fa-play-circle text-teal-400 mr-2"></i><strong>넷플릭스 드라마 스위트홈 시즌2 1화 숨바꼭질 괴물 애니메이션 작업 (27초)</strong></a>
+                    </p>
+                `
+            },
+            '엄마까투리': {
+                title: 'Project 엄마까투리 시즌 5 (2022)',
+                videoUrl: 'https://www.youtube.com/embed/9Plqe-t8uAc',
+                description: `
+                    <p class="text-sm space-y-2">
+                        <a href="https://www.youtube.com/watch?feature=shared&v=-yiOqRuuA3Y" target="_blank" class="text-gray-200 hover:text-teal-400 transition"><i class="fas fa-play-circle text-teal-400 mr-2"></i><strong>39화 ‘세상에서 가장 큰 눈사람’ 애니메이션 작업 (36초)</strong></a>
+                        <br><span class="ml-6">(02:26 ~ 03:02)</span>
+                    </p>
+                `
+            },
+            '슈퍼윙스8': {
+                title: 'Project 슈퍼윙스 시즌 8 (2022-2023)',
+                videoUrl: 'https://www.youtube.com/embed/XhIb-r7gs1I',
+                description: `
+                    <p class="text-sm space-y-2">
+                        <a href="https://youtu.be/xF21FcG_Wq0?feature=shared" target="_blank" class="text-gray-200 hover:text-teal-400 transition"><i class="fas fa-play-circle text-teal-400 mr-2"></i><strong>4화 ‘츄츄!바게트 기차’ 애니메이션 작업 (35초)</strong></a>
+                        <br>
+                        <a href="https://youtu.be/JBMw0NhDyCs?feature=share" target="_blank" class="text-gray-200 hover:text-teal-400 transition"><i class="fas fa-play-circle text-teal-400 mr-2"></i><strong>9화 ‘신나는 용춤 대결’ 블로킹 작업 (15초)</strong></a>
+                    </p>
+                `
+            },
+            '방과후전쟁활동': {
+                title: 'Project 방과 후 전쟁활동 (2021-2023)',
+                videoUrl: 'https://www.youtube.com/embed/KZQ_1XUidEs',
+                description: `
+                    <p class="text-sm space-y-2">
+                        <i class="fas fa-play-circle text-teal-400 mr-2"></i><strong>2화/3화 프리비즈 작업, 카메라 구도 배치 및 씬 구상</strong>
+                        <br>
+                        <a href="https://www.youtube.com/watch?v=YXDAJ-mS5G4&list=PLxqZh18k2KNqI5GFlrr-iT1yjYnOmcQV1" target="_blank" class="text-gray-200 hover:text-teal-400 transition"><i class="fas fa-play-circle text-teal-400 mr-2"></i><strong>본편 에피소드 소형구, 중형구 애니메이션 작업 (7분 28초)</strong></a>
+                    </p>
+                `
+            },
+            '카트라이더': {
+                title: 'Project 카트라이더 Go Fast 뮤직비디오 (2021)',
+                videoUrl: 'https://www.youtube.com/embed/jSafysA915U',
+                description: `
+                    <p class="text-sm space-y-2">
+                        <a href="https://www.youtube.com/watch?feature=shared&v=9XCXH_oj2uI" target="_blank" class="text-gray-200 hover:text-teal-400 transition"><i class="fas fa-play-circle text-teal-400 mr-2"></i><strong>카트라이더:드리프트 Official MV 레이아웃,블로킹 작업 (21초)</strong></a>
+                    </p>
+                `
+            }
+        };
+
+        // DOM 요소 가져오기
+        const projectThumbnails = document.querySelectorAll('.project-thumbnail');
+        const projectDetailsSection = document.getElementById('project-details');
+        const projectDetailsContainer = document.getElementById('project-details-container');
+        const aboutText = document.getElementById('about-text');
+        const aboutLink = document.querySelector('a[href="#about"]');
+
+        // 프로젝트 상세 내용 표시 함수
+        function displayProjectDetails(projectId) {
+            const project = projects[projectId];
+            if (!project) return;
+
+            const htmlContent = `
+                <h3 class="text-3xl font-bold mb-8 text-center">${project.title}</h3>
+                <div class="relative pt-[56.25%] overflow-hidden rounded-xl shadow-lg mb-8">
+                    <iframe class="absolute top-0 left-0 w-full h-full"
+                        src="${project.videoUrl}"
+                        title="${project.title} 프로젝트 영상"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="max-w-3xl mx-auto text-lg text-gray-300 space-y-4">
+                    ${project.description}
+                </div>
+            `;
+            
+            projectDetailsContainer.innerHTML = htmlContent;
+            projectDetailsSection.classList.remove('hidden');
+        }
+
+        // 썸네일 클릭 이벤트 리스너
+        projectThumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', function (e) {
+                e.preventDefault();
+                const projectId = this.getAttribute('data-project-id');
+                displayProjectDetails(projectId);
+                
+                // 상세 내용 섹션으로 부드럽게 스크롤
+                projectDetailsSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // About 링크 클릭 시 자기소개서 내용 토글
+        aboutLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+            aboutText.classList.toggle('hidden');
+        });
+
+        // 내비게이션 바 부드러운 스크롤 (기존 기능 유지)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#project-')) {
+                    return; // 프로젝트 링크는 위에서 처리
+                }
+                if (href === '#about') {
+                    // About 링크는 위에서 별도로 처리
+                    return;
+                }
+                e.preventDefault();
+                const targetId = href.substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
