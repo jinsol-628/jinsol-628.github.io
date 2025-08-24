@@ -104,14 +104,17 @@
             .mobile {
                 display: none;
             }
-#skill-description {
-    font-size: 14px;
-  line-height: 1.5;
+            #skill-description {
+                font-size: 14px;
+                line-height: 1.5;
 
-  white-space: pre-wrap;      /* 줄바꿈 허용 */
-  word-break: break-word;     /* 단어가 길면 줄바꿈 */
-  overflow-x: auto;           /* 가로 스크롤 */
-}
+                white-space: pre-wrap;      /* 줄바꿈 허용 */
+                word-break: break-word;     /* 단어가 길면 줄바꿈 */
+                overflow-x: auto;           /* 가로 스크롤 */
+                font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue',
+                'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji',
+                'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+            }
             @media (max-width: 480px) {
                 .mobile {
                     display: block;
@@ -448,10 +451,12 @@
                 const skillsData = {
                     'project-management': {
                         title: '프로젝트 스케줄 관리',
-                        description:
-`일정 관리 및 조율: 감독님, 콘티팀, 외주 작업자 등 각 파트의 작업 진행 상황을 실시간으로 확인하고, 작업물 마감일과 피드백 일정을 조율했습니다. 
+description:
+`일정 관리 및 조율: 감독님, 콘티팀, 외주 작업자 등 각 파트의 작업 진행 상황을 실시간으로 확인하고, 
+작업물 마감일과 피드백 일정을 조율했습니다. 
 
-커뮤니케이션: 변동 사항이나 이슈 발생 시, 모든 팀원이 이를 빠르게 공유받고 대응할 수 있도록 정보를 정리하여 전달하는 역할을 했습니다.`,
+커뮤니케이션: 변동 사항이나 이슈 발생 시, 모든 팀원이 이를 빠르게 공유받고 대응할 수 있도록 정보를 
+정리하여 전달하는 역할을 했습니다.`,
                         image: './img/schedule.gif',
                     },
                     'asset-management': {
@@ -459,21 +464,27 @@
                         description:
 `에셋 관리 및 정리: 배경, 캐릭터, 소품 등 애니메이션 제작에 필요한 모든 에셋을 스프레드시트로 체계적으로 관리했습니다. 에피소드와 제작 단계를 세분화하여 에셋 목록을 정리했습니다. 
 
-에셋 구매 및 소싱: 간단한 프랍 어셋은 직접 웹사이트에서 찾아 감독님 컨펌을 거쳐 구매하는 업무를 담당했습니다. 이 과정을 통해 프로젝트에 필요한 어셋을 효율적으로 정리했습니다.`,
+에셋 구매 및 소싱: 간단한 프랍 어셋은 직접 웹사이트에서 찾아 감독님 컨펌을 거쳐 구매하는 업무를 
+담당했습니다. 이 과정을 통해 프로젝트에 필요한 어셋을 효율적으로 정리했습니다.`,
                         image: './img/asset.gif',
                     },
                     'reference-board': {
                         title: '레퍼런스 보드 작성',
                         description:
-`룩뎁 레퍼런스 보드 작성: 스토리보드를 기반으로 각 에피소드와 장면에 맞는 분위기와 느낌을 담은 룩뎁 레퍼런스 보드를 제작해 조명, 장소, 배경 등 구체적인 시각 컨셉을 명확히 전달하는 역할을 했습니다.
+`룩뎁 레퍼런스 보드 작성: 스토리보드를 기반으로 각 에피소드와 장면에 맞는 분위기와 느낌을 담은 
+룩뎁 레퍼런스 보드를 제작해 조명, 장소, 배경 등 구체적인 시각 컨셉을 명확히 전달하는 역할을 했습니다.
 
-스킬 및 이펙트 레퍼런스 보드 제작: 캐릭터의 움직임과 공격 스킬에 필요한 이펙트 효과를 위한 별도의 레퍼런스 보드를 제작해 시각적인 가이드를 제공함으로써 작업자들이 의도한 표현을 정확하게 이해하고 구현할 수 있도록 지원했습니다.`,
+스킬 및 이펙트 레퍼런스 보드 제작: 캐릭터의 움직임과 공격 스킬에 필요한 이펙트 효과를 위한 별도의 
+레퍼런스 보드를 제작해 시각적인 가이드를 제공함으로써 작업자들이 의도한 표현을 정확하게 이해하고 
+구현할 수 있도록 지원했습니다.`,
                         image: './img/skill.gif',
                     },
                     'animation-experience': {
                         title: '애니메이션 작업경험',
                         description:
-`애니메이터로 직접 작업하며 애니메이션 제작 과정 전반과 작업자들의 어려움을 깊이 있게 이해하게 되었습니다. 이 경험은 프로젝트 진행 시, 각 파트의 작업자들과 원활하게 소통하고 효과적으로 협업하는 데 큰 강점이 될 수 있습니다.`,
+`애니메이터로 직접 작업하며 애니메이션 제작 과정 전반과 작업자들의 어려움을 깊이 있게 이해하게 
+되었습니다. 이 경험은 프로젝트 진행 시, 각 파트의 작업자들과 원활하게 소통하고 효과적으로 협업함에 
+큰 강점이 될 수 있습니다.`,
                         image: './img/ani.gif',
                     },
                 };
@@ -511,11 +522,11 @@
                         <div class="project-description-container">
                             <p class="text-sm space-y-2">
                                 <a href="https://youtu.be/4pjvCyaVYEo?feature=shared" target="_blank" class="text-gray-200 hover:text-teal-400 transition"><i class="fas fa-play-circle text-teal-400 mr-2"></i><strong>48화 ‘모기야 그만해’ 애니메이션 작업 (59초)</strong></a>
-                                <br><span class="ml-6">(00:00~00:59)</span><br>
+                                <br><span class="ml-6 text-gray-200">(00:00~00:59)</span><br>
                                 <a href="https://youtu.be/Bcrx6_Vr5Z4?feature=shared" target="_blank" class="text-gray-200 hover:text-teal-400 transition"><i class="fas fa-play-circle text-teal-400 mr-2"></i><strong>50화 ‘뭉치만 믿어’ 애니메이션 작업 (1분 20초)</strong></a>
-                                <br><span class="ml-6">(00:00~01:20)</span><br>
+                                <br><span class="ml-6 text-gray-200">(00:00~01:20)</span><br>
                                 <a href="https://youtu.be/JsFyBN6X_Ew?feature=shared&t=47" target="_blank" class="text-gray-200 hover:text-teal-400 transition"><i class="fas fa-play-circle text-teal-400 mr-2"></i><strong>52화 ‘콩순이의 생일파티’ 애니메이션 작업 (56초)</strong></a>
-                                <br><span class="ml-6">(00:47~01:17, 05:14~05:40)</span>
+                                <br><span class="ml-6 text-gray-200">(00:47~01:17, 05:14~05:40)</span>
                             </p>
                         </div>
                     `,
@@ -542,9 +553,9 @@
                         <div class="project-description-container">
                             <p class="text-sm space-y-2">
                                 <a href="https://www.youtube.com/watch?feature=shared&v=CYluk3fgL4Y" target="_blank" class="text-gray-200 hover:text-teal-400 transition"><i class="fas fa-play-circle text-teal-400 mr-2"></i><strong>5화 ‘투란타의 분노’  애니메이션 작업 (2분 56초)</strong></a>
-                                <br><span class="ml-6">(04:26 ~ 05:24, 05:38 ~ 05:59, 07:16 ~ 08:33, 10:48 ~11:12)</span><br>
+                                <br><span class="ml-6 text-gray-200">(04:26 ~ 05:24, 05:38 ~ 05:59, 07:16 ~ 08:33, 10:48 ~11:12)</span><br>
                                 <a href="https://www.youtube.com/watch?feature=shared&v=2PLziHg8vWI" target="_blank" class="text-gray-200 hover:text-teal-400 transition"><i class="fas fa-play-circle text-teal-400 mr-2"></i><strong>11화 ‘토잉토리는 귀여워’ 애니메이션 작업 (1분8초)</strong></a>
-                                <br><span class="ml-6">(00:54~01:07, 03:48~04:17, 05:56~06:18)</span>
+                                <br><span class="ml-6 text-gray-200">(00:54~01:07, 03:48~04:17, 05:56~06:18)</span>
                             </p>
                         </div>
                     `,
@@ -569,7 +580,7 @@
                         <div class="project-description-container">
                             <p class="text-sm space-y-2">
                                 <a href="https://www.youtube.com/watch?feature=shared&v=-yiOqRuuA3Y" target="_blank" class="text-gray-200 hover:text-teal-400 transition"><i class="fas fa-play-circle text-teal-400 mr-2"></i><strong>39화 ‘세상에서 가장 큰 눈사람’ 애니메이션 작업 (36초)</strong></a>
-                                <br><span class="ml-6">(02:26 ~ 03:02)</span>
+                                <br><span class="ml-6 text-gray-200">(02:26 ~ 03:02)</span>
                             </p>
                         </div>
                     `,
@@ -594,7 +605,7 @@
                         thumb: 'https://talkimg.imbc.com/TVianUpload/tvian/TViews/image/2023/03/02/09f7d299-99e8-4305-be8c-cf47230e31e2.jpg',
                         description: `
                         <div class="project-description-container">
-                            <p class="text-sm space-y-2">
+                            <p class="text-sm space-y-2 text-gray-200">
                                 <i class="fas fa-play-circle text-teal-400 mr-2"></i><strong>2화/3화 프리비즈 작업, 카메라 구도 배치 및 씬 구상</strong>
                                 <br>
                                 <a href="https://www.youtube.com/watch?v=YXDAJ-mS5G4&list=PLxqZh18k2KNqI5GFlrr-iT1yjYnOmcQV1" target="_blank" class="text-gray-200 hover:text-teal-400 transition"><i class="fas fa-play-circle text-teal-400 mr-2"></i><strong>본편 에피소드 소형구, 중형구 애니메이션 작업 (7분 28초)</strong></a>
